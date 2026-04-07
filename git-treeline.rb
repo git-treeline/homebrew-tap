@@ -5,13 +5,13 @@
 class GitTreeline < Formula
   desc "Worktree environment manager — isolated ports, databases, and services across parallel development environments"
   homepage "https://github.com/git-treeline/git-treeline"
-  version "0.35.5"
+  version "0.35.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/git-treeline/git-treeline/releases/download/v0.35.5/git-treeline_0.35.5_darwin_amd64.tar.gz"
-      sha256 "98fd95089e49f2af687d9e2fb605bac99bd52a291d6b1ae29db2e6f17a16f6c4"
+      url "https://github.com/git-treeline/git-treeline/releases/download/v0.35.6/git-treeline_0.35.6_darwin_amd64.tar.gz"
+      sha256 "03cebceaa57fe4f4220de4b22cdae8887655c8bc8044633ec43c5c6ead8c0cc6"
 
       define_method(:install) do
         bin.install "git-treeline"
@@ -22,8 +22,8 @@ class GitTreeline < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/git-treeline/git-treeline/releases/download/v0.35.5/git-treeline_0.35.5_darwin_arm64.tar.gz"
-      sha256 "854c7d5d2ae92fad1c8e506aa45701becc9a9d4838dabc8684f197c8ce5b7b87"
+      url "https://github.com/git-treeline/git-treeline/releases/download/v0.35.6/git-treeline_0.35.6_darwin_arm64.tar.gz"
+      sha256 "9bd77b73ea8ffc00f3a5cf2fd9e7d5a9ff599b5aed6c5b566569a18ef0267744"
 
       define_method(:install) do
         bin.install "git-treeline"
@@ -37,8 +37,8 @@ class GitTreeline < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/git-treeline/git-treeline/releases/download/v0.35.5/git-treeline_0.35.5_linux_amd64.tar.gz"
-      sha256 "736028ed4deb16fb90620bc0c3575a5c225f2517dc332dbabb5d525010f08b61"
+      url "https://github.com/git-treeline/git-treeline/releases/download/v0.35.6/git-treeline_0.35.6_linux_amd64.tar.gz"
+      sha256 "2a30561a1ba10731368bf0d4f3e4fb0693525b9ddb57b3dc3114a2d80cdba2ae"
       define_method(:install) do
         bin.install "git-treeline"
         bin.install_symlink "git-treeline" => "gtl"
@@ -48,8 +48,8 @@ class GitTreeline < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/git-treeline/git-treeline/releases/download/v0.35.5/git-treeline_0.35.5_linux_arm64.tar.gz"
-      sha256 "71671774c7c4cae17eed91b1d2dd6c650fd11844fec95cc88ad4997e4f2fb1d2"
+      url "https://github.com/git-treeline/git-treeline/releases/download/v0.35.6/git-treeline_0.35.6_linux_arm64.tar.gz"
+      sha256 "f088256c7abae97491549b66f6bc0c06384970c09e8e3c105b458a0c9a82eace"
       define_method(:install) do
         bin.install "git-treeline"
         bin.install_symlink "git-treeline" => "gtl"
