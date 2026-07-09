@@ -5,31 +5,33 @@
 class GitTreeline < Formula
   desc "Worktree environment manager — isolated ports, databases, and services across parallel development environments"
   homepage "https://github.com/git-treeline/cli"
-  version "0.47.0"
+  version "0.48.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/git-treeline/cli/releases/download/v0.47.0/git-treeline_0.47.0_darwin_amd64.tar.gz"
-      sha256 "e1d5929ffd45b6a35c9c4cd0b77194640e28fad0a2d74b365c8bf7aa01a3d06c"
+      url "https://github.com/git-treeline/cli/releases/download/v0.48.0/git-treeline_0.48.0_darwin_amd64.tar.gz"
+      sha256 "5aee2d441b73250eb8d7e4732e3e560ed5f7f4f60f70d29f40598e7e87c46409"
 
       define_method(:install) do
         bin.install "git-treeline"
         bin.install_symlink "git-treeline" => "gtl"
 
-        generate_completions_from_executable(bin/"git-treeline", "completion")
+        # Completions target the 'gtl' command name (the symlink users invoke),
+        # which is what 'git-treeline completion' now emits (#compdef gtl / _gtl).
         generate_completions_from_executable(bin/"git-treeline", "completion", base_name: "gtl")
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/git-treeline/cli/releases/download/v0.47.0/git-treeline_0.47.0_darwin_arm64.tar.gz"
-      sha256 "a4a89af7f0c4ec6fe5519131080f1b375d0cd10370606cd12d58780ed29b89cd"
+      url "https://github.com/git-treeline/cli/releases/download/v0.48.0/git-treeline_0.48.0_darwin_arm64.tar.gz"
+      sha256 "e1ed7b7e2614475a9b15b1abe1f7f0c3e8e4174562ef4c3227138b88c39865a4"
 
       define_method(:install) do
         bin.install "git-treeline"
         bin.install_symlink "git-treeline" => "gtl"
 
-        generate_completions_from_executable(bin/"git-treeline", "completion")
+        # Completions target the 'gtl' command name (the symlink users invoke),
+        # which is what 'git-treeline completion' now emits (#compdef gtl / _gtl).
         generate_completions_from_executable(bin/"git-treeline", "completion", base_name: "gtl")
       end
     end
@@ -37,24 +39,26 @@ class GitTreeline < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/git-treeline/cli/releases/download/v0.47.0/git-treeline_0.47.0_linux_amd64.tar.gz"
-      sha256 "1800a23ce76f0521144129bdd82a195efdbb5dfe997b9a4f715b6ac8c9384695"
+      url "https://github.com/git-treeline/cli/releases/download/v0.48.0/git-treeline_0.48.0_linux_amd64.tar.gz"
+      sha256 "16a1b1964ecda377cbf6624f95615ba88c8e68b96fedcd54234d263d49ebfbf1"
       define_method(:install) do
         bin.install "git-treeline"
         bin.install_symlink "git-treeline" => "gtl"
 
-        generate_completions_from_executable(bin/"git-treeline", "completion")
+        # Completions target the 'gtl' command name (the symlink users invoke),
+        # which is what 'git-treeline completion' now emits (#compdef gtl / _gtl).
         generate_completions_from_executable(bin/"git-treeline", "completion", base_name: "gtl")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/git-treeline/cli/releases/download/v0.47.0/git-treeline_0.47.0_linux_arm64.tar.gz"
-      sha256 "80b79837520ac922813c2cb21d0da860c6ba496017ab34c1404bdc9091694405"
+      url "https://github.com/git-treeline/cli/releases/download/v0.48.0/git-treeline_0.48.0_linux_arm64.tar.gz"
+      sha256 "8e757c0cb7cdd75585421ec76b68304d996d8feda038f5bbf75eaebc7f922e5a"
       define_method(:install) do
         bin.install "git-treeline"
         bin.install_symlink "git-treeline" => "gtl"
 
-        generate_completions_from_executable(bin/"git-treeline", "completion")
+        # Completions target the 'gtl' command name (the symlink users invoke),
+        # which is what 'git-treeline completion' now emits (#compdef gtl / _gtl).
         generate_completions_from_executable(bin/"git-treeline", "completion", base_name: "gtl")
       end
     end
